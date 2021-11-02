@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=health\ power\ xp
+comment0.target=Monsters(int,\ int,\ int)
+comment1.params=
+comment1.target=int\ getHealth()
+comment2.params=newHealth
+comment2.target=void\ setHealth(int)
+comment3.params=
+comment3.target=int\ getXP()
+comment4.params=newXP
+comment4.target=void\ setXP(int)
+comment5.params=
+comment5.target=int\ getPower()
+comment6.params=newPower
+comment6.target=void\ setPower(int)
+numComments=7
