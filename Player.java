@@ -24,6 +24,9 @@ public class Player
    public void setHealth(int newHealth){
        this.health = newHealth;
     }
+   public void addHealth(int moreHealth){
+       this.health += moreHealth;
+    }
     
    public int getXP(){
        return this.xp;
@@ -31,12 +34,18 @@ public class Player
    public void setXP(int newXP){
        this.xp = newXP;
     }
+   public void addXP(int moreXP){
+       this.xp += moreXP;
+    }
     
    public int getPower(){
        return this.power;
     }
    public void setPower(int newPower){
        this.power = newPower;
+    }
+   public void addPower(int morePower){
+       this.power += morePower;
     }
 }
 
