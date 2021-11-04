@@ -8,7 +8,11 @@ public class Monsters
     private int power;
     //the xp the monsters drop
     private int xp;
-
+    public Monsters(){
+        this.health = 50;
+        this.xp = 1;
+        this.power = 10;
+    }
     public Monsters(int health, int power, int xp)
     {
         this.health = health;
