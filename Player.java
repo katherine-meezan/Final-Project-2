@@ -75,21 +75,33 @@ public class Player
    
    // Gameplay
    ///////////////////////////////////////////////////////////
-   
+   //make this a while loop
+   //combat with zombies
+   //add stuff to inventory
+   //able to look at other boxes afterwards
       public void corner(String answer){
        if (answer.equals("1")){
-           print("A zombie springs out! Oh no!");
-           // combat();
+           Box b1 = new Box(2,1,false);
+           b1.printBoxInfo();
        } else if (answer.equals("2")){
-           print("You found two bottles with strange red liquid");
-           addItem("health poition", 2);
+           Box b2 = new Box(3,2,false);
+           b2.printBoxInfo();
        } else if (answer.equals("3")){
-           print("You found a key! What's it for...");
-           addItem("key");
+           Box b3 = new Box(4,5,true);
+           b3.printBoxInfo();
        } else if(answer.equals("4")){
-           print("A zombie springs out! Oh no!");
+           Box b4 = new Box(1,1,false);
+           b4.printBoxInfo();
        } else if(answer.equals("door")){
            print("The door is locked");
+       }
+   }
+   
+   public void corner(String answer, int boxNumber){
+       for(int i = 0; i < boxNumber; i++){
+           if (answer.equals("1")){
+               Box bi = new Box(((int)(Math.random() * i)),((int)(Math.random() * i)),false);
+            }
        }
    }
    

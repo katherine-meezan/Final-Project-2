@@ -1,41 +1,49 @@
 #BlueJ package file
-dependency1.from=GamePlayDriver
-dependency1.to=Player
-dependency1.type=UsesDependency
 objectbench.height=76
-objectbench.width=1900
-package.editor.height=883
-package.editor.width=1802
-package.editor.x=-8
-package.editor.y=-8
-package.numDependencies=1
-package.numTargets=3
+objectbench.width=658
+package.editor.height=431
+package.editor.width=560
+package.editor.x=1054
+package.editor.y=144
+package.numDependencies=0
+package.numTargets=2
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
+<<<<<<< HEAD
 target1.editor.height=705
 target1.editor.width=901
 target1.editor.x=24
 target1.editor.y=74
+=======
+target1.editor.height=700
+target1.editor.width=900
+target1.editor.x=731
+target1.editor.y=273
+>>>>>>> 7f42223fa981dbbb89f56729bc9a37dfbf777e24
 target1.height=50
 target1.name=Player
-target1.naviview.expanded=true
 target1.showInterface=false
 target1.type=ClassTarget
 target1.typeParameters=
 target1.width=80
+<<<<<<< HEAD
 target1.x=130
 target1.y=30
 target2.editor.height=755
 target2.editor.width=900
 target2.editor.x=986
 target2.editor.y=71
+=======
+target1.x=70
+target1.y=10
+>>>>>>> 7f42223fa981dbbb89f56729bc9a37dfbf777e24
 target2.height=50
-target2.name=GamePlayDriver
-target2.naviview.expanded=true
+target2.name=Monsters
 target2.showInterface=false
 target2.type=ClassTarget
 target2.typeParameters=
+<<<<<<< HEAD
 target2.width=120
 target2.x=240
 target2.y=570
@@ -52,3 +60,8 @@ target3.typeParameters=
 target3.width=80
 target3.x=160
 target3.y=150
+=======
+target2.width=80
+target2.x=160
+target2.y=10
+>>>>>>> 7f42223fa981dbbb89f56729bc9a37dfbf777e24
