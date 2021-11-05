@@ -17,24 +17,25 @@ public class Box
        this.hasKey = key;
     }
    
-   public Box(int healthAdd, int monsters, boolean hasKey){
+   public Box(int healthAdd, Monsters[] monsters, boolean hasKey){
        this.healthAdd = healthAdd;
-       //this.monsters = monsters;
-       this.monsterCount = monsters;
+       this.monsters = monsters;
+       //this.monsterCount = monsters;
        this.hasKey = hasKey;
     }
     
-   public void printBoxInfo(){
-       print("This box has " + this.healthAdd + " health in it");
-       print("there is also " + monsters.length + " monsters in it! Oh no!");
+   public Monsters[] printBoxInfo(){
+       print("This box has " + this.healthAdd + " health potions in it");
+       print("There is also " + monsters.length + " monsters in it! Oh no!");
        if(this.hasKey == true){
-           System.out.print(" and a key");
+           System.out.print(" It also has a key...");
         }
+       return this.monsters;
     }
     
  
     
-    public static void print(String s){
+   public static void print(String s){
        System.out.println(s);
    }
    

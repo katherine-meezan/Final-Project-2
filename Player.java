@@ -75,28 +75,58 @@ public class Player
    
    // Gameplay
    ///////////////////////////////////////////////////////////
-   //make this a while loop
    //combat with zombies
-   //add stuff to inventory
+   //make this a while loop
    //able to look at other boxes afterwards
-      public void corner(String answer){
+   //key-door functionality
+   
+   
+   //add stuff to inventory
+   // other levels (not gonna happen lol)
+   Monsters m1 = new Monsters();
+   Monsters m2 = new Monsters();
+   Monsters m3 = new Monsters();
+   Monsters m4 = new Monsters();
+   Monsters m5 = new Monsters();
+   Monsters m6 = new Monsters();
+   Monsters m7 = new Monsters();
+   Monsters[] mList = {null};
+      public Monsters[] corner(String answer){
        if (answer.equals("1")){
-           Box b1 = new Box(2,1,false);
+           Monsters[] mList = {m1};
+           Box b1 = new Box(2,mList,false);
            b1.printBoxInfo();
+           return(mList);
        } else if (answer.equals("2")){
-           Box b2 = new Box(3,2,false);
+           Monsters[] mList = {m2,m3};
+           Box b2 = new Box(3,mList,false);
            b2.printBoxInfo();
+           return(mList);
        } else if (answer.equals("3")){
-           Box b3 = new Box(4,5,true);
+           Monsters[] mList = {m4, m5, m6};
+           Box b3 = new Box(4,mList,true);
            b3.printBoxInfo();
+           return(mList);
        } else if(answer.equals("4")){
-           Box b4 = new Box(1,1,false);
+           Monsters[] mList = {m7};
+           Box b4 = new Box(1,mList,false);
            b4.printBoxInfo();
+           return(mList);
        } else if(answer.equals("door")){
            print("The door is locked");
-       }
+           Monsters[] mList = {null};
+           return(mList);
+       } else {
+           print("You didn't answer the question :/");
+           return(null);
+        }
    }
    
+   public  Monsters[] getMonsters(){
+       return mList;
+   }
+   
+   /*
    public void corner(String answer, int boxNumber){
        for(int i = 0; i < boxNumber; i++){
            if (answer.equals("1")){
@@ -104,10 +134,13 @@ public class Player
             }
        }
    }
+   */
    
       public static void print(String s){
        System.out.println(s);
    }
+   
+   
 }
 
 
