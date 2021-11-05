@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=key
+comment0.target=Box(boolean)
+comment1.params=healthAdd\ monsters\ hasKey
+comment1.target=Box(int,\ Monsters[],\ boolean)
+comment2.params=
+comment2.target=Monsters[]\ printBoxInfo()
+comment3.params=s
+comment3.target=void\ print(java.lang.String)
+numComments=4

@@ -75,27 +75,72 @@ public class Player
    
    // Gameplay
    ///////////////////////////////////////////////////////////
+   //combat with zombies
+   //make this a while loop
+   //able to look at other boxes afterwards
+   //key-door functionality
    
-      public void corner(String answer){
+   
+   //add stuff to inventory
+   // other levels (not gonna happen lol)
+   Monsters m1 = new Monsters();
+   Monsters m2 = new Monsters();
+   Monsters m3 = new Monsters();
+   Monsters m4 = new Monsters();
+   Monsters m5 = new Monsters();
+   Monsters m6 = new Monsters();
+   Monsters m7 = new Monsters();
+   Monsters[] mList = {null};
+      public Monsters[] corner(String answer){
        if (answer.equals("1")){
-           print("A zombie springs out! Oh no!");
-           // combat();
+           Monsters[] mList = {m1};
+           Box b1 = new Box(2,mList,false);
+           b1.printBoxInfo();
+           return(mList);
        } else if (answer.equals("2")){
-           print("You found two bottles with strange red liquid");
-           addItem("health poition", 2);
+           Monsters[] mList = {m2,m3};
+           Box b2 = new Box(3,mList,false);
+           b2.printBoxInfo();
+           return(mList);
        } else if (answer.equals("3")){
-           print("You found a key! What's it for...");
-           addItem("key");
+           Monsters[] mList = {m4, m5, m6};
+           Box b3 = new Box(4,mList,true);
+           b3.printBoxInfo();
+           return(mList);
        } else if(answer.equals("4")){
-           print("A zombie springs out! Oh no!");
+           Monsters[] mList = {m7};
+           Box b4 = new Box(1,mList,false);
+           b4.printBoxInfo();
+           return(mList);
        } else if(answer.equals("door")){
            print("The door is locked");
+           Monsters[] mList = {null};
+           return(mList);
+       } else {
+           print("You didn't answer the question :/");
+           return(null);
+        }
+   }
+   
+   public  Monsters[] getMonsters(){
+       return mList;
+   }
+   
+   /*
+   public void corner(String answer, int boxNumber){
+       for(int i = 0; i < boxNumber; i++){
+           if (answer.equals("1")){
+               Box bi = new Box(((int)(Math.random() * i)),((int)(Math.random() * i)),false);
+            }
        }
    }
+   */
    
       public static void print(String s){
        System.out.println(s);
    }
+   
+   
 }
 
 

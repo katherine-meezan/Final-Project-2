@@ -18,6 +18,16 @@ public class GamePlayDriver
        
        p1.corner(answer);
        
+       Monsters[] mList = p1.getMonsters();
+       
+       
+       for(Monsters monster: mList){
+           if (monster != null){
+               monster.combat(p1);
+               print("segtstgddgdgdr");
+           }  
+       }
+       
    }
    
    public static void print(String s){
