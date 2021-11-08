@@ -65,6 +65,7 @@ public class Monsters
                 this.health =- player.getPower();
             }
             player.addHealth(power * (-1));
+            print("The monster punched you!");
         }
         
         if (this.health <= 0){

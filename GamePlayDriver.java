@@ -15,18 +15,25 @@ public class GamePlayDriver
        print("Each corner has a box in it. What do you wish to do?");
        print("Do you want to go to corner 1,2,3, or 4?");
        String answer = s.nextLine();
-       
-       p1.corner(answer);
-       
-       Monsters[] mList = p1.getMonsters();
+       int boxTracker = p1.getBoxTracker()+1;
        
        
-       for(Monsters monster: mList){
-           if (monster != null){
-               monster.combat(p1);
-               print("segtstgddgdgdr");
-           }  
-       }
+       while(boxTracker < 4){
+           
+           //if(p1.getBoxTracker() > 0){
+               //answer = s.nextLine();
+            //}
+           Monsters[] mList = p1.getMonsters(answer);
+           
+           
+           for(Monsters monster: mList){
+               if (monster != null){
+                   monster.combat(p1);
+               }  
+           }
+           print("Which corner do you want to try now? 1, 2, 3, 4? Don't try one you already went to!");
+           answer = s.nextLine();
+        }
        //chang4e
    }
    

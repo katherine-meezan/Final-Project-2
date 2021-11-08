@@ -6,6 +6,7 @@ public class Player
    private int xp;
    private int power;
    ArrayList<String> items = new ArrayList<String>();
+   private int boxTracker;
    
    public Player(){
        this.health = 100;
@@ -91,50 +92,53 @@ public class Player
    Monsters m6 = new Monsters();
    Monsters m7 = new Monsters();
    Monsters[] mList = {null};
+   Monsters[] blankList = {null};
+   
       public Monsters[] corner(String answer){
        if (answer.equals("1")){
            Monsters[] mList = {m1};
            Box b1 = new Box(2,mList,false);
            b1.printBoxInfo();
+           boxTracker++;
            return(mList);
+           
        } else if (answer.equals("2")){
            Monsters[] mList = {m2,m3};
            Box b2 = new Box(3,mList,false);
            b2.printBoxInfo();
+           boxTracker++;
            return(mList);
+           
        } else if (answer.equals("3")){
            Monsters[] mList = {m4, m5, m6};
            Box b3 = new Box(4,mList,true);
            b3.printBoxInfo();
+           boxTracker++;
            return(mList);
+           
        } else if(answer.equals("4")){
            Monsters[] mList = {m7};
            Box b4 = new Box(1,mList,false);
            b4.printBoxInfo();
+           boxTracker++;
            return(mList);
+           
        } else if(answer.equals("door")){
            print("The door is locked");
            Monsters[] mList = {null};
            return(mList);
        } else {
            print("You didn't answer the question :/");
-           return(null);
+           return(blankList);
         }
    }
+   public int getBoxTracker(){
+       return this.boxTracker;
+    }
    
-   public  Monsters[] getMonsters(){
-       return mList;
+   public  Monsters[] getMonsters(String answer){
+       return corner(answer);
    }
-   
-   /*
-   public void corner(String answer, int boxNumber){
-       for(int i = 0; i < boxNumber; i++){
-           if (answer.equals("1")){
-               Box bi = new Box(((int)(Math.random() * i)),((int)(Math.random() * i)),false);
-            }
-       }
-   }
-   */
    
       public static void print(String s){
        System.out.println(s);
