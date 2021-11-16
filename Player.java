@@ -7,17 +7,25 @@ public class Player
    private int power;
    ArrayList<String> items = new ArrayList<String>();
    private int boxTracker;
+   private boolean hasKey;
+   ArrayList<String> boxesAvailable = new ArrayList<String>();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
    
    public Player(){
        this.health = 100;
        this.xp = 0;
        this.power = 10;
+       this.hasKey = false;
+       boxesAvailable.add("1");
+       boxesAvailable.add("2");
+       boxesAvailable.add("3");
+       boxesAvailable.add("4");
     }
     
    public Player(int health, int xp, int power){
        this.health = health;
        this.xp = xp;
        this.power = power;
+       this.hasKey = false;
     }
     
    // getters and setters
@@ -76,12 +84,6 @@ public class Player
    
    // Gameplay
    ///////////////////////////////////////////////////////////
-   //combat with zombies
-   //make this a while loop
-   //able to look at other boxes afterwards
-   //key-door functionality
-   
-   
    //add stuff to inventory
    // other levels (not gonna happen lol)
    Monsters m1 = new Monsters();
@@ -93,38 +95,82 @@ public class Player
    Monsters m7 = new Monsters();
    Monsters[] mList = {null};
    Monsters[] blankList = {null};
-   
+   Box box = new Box(false);
+   //public static void addBoxesGodIHateCoding(){
+    //}
+
       public Monsters[] corner(String answer){
+       
        if (answer.equals("1")){
            Monsters[] mList = {m1};
-           Box b1 = new Box(2,mList,false);
-           b1.printBoxInfo();
-           boxTracker++;
-           return(mList);
-           
+           //Box b1 = new Box(2,mList,false);
+           for (String boxo : boxesAvailable){
+               if (boxo.equals("1")){
+                   boxesAvailable.remove(boxo);
+                   box.setHealth(2);
+                   box.setMonsters(mList);
+                   box.setHasKey(false);
+                   this.health+=box.getHealth() *10;
+                   box.printBoxInfo();
+                   return(mList);
+                }
+            }
+           print("\nYou already checked this box! Nothing spawned in while you were looking away");
+           return(null);
        } else if (answer.equals("2")){
            Monsters[] mList = {m2,m3};
-           Box b2 = new Box(3,mList,false);
-           b2.printBoxInfo();
-           boxTracker++;
-           return(mList);
-           
+           //Box b2 = new Box(3,mList,false);
+           for (String boxo: boxesAvailable){
+               if (boxo.equals("2")){
+                   boxesAvailable.remove(boxo);
+                   box.setMonsters(mList);
+                   box.setHasKey(false);
+                   this.health+=box.getHealth() *10;
+                   box.printBoxInfo();
+                   return(mList);
+                }
+            }
+            print("\nYou already checked this box! Nothing spawned in while you were looking away");
+            return(null);
        } else if (answer.equals("3")){
            Monsters[] mList = {m4, m5, m6};
-           Box b3 = new Box(4,mList,true);
-           b3.printBoxInfo();
-           boxTracker++;
-           return(mList);
-           
+           //Box b3 = new Box(4,mList,true);
+           for (String boxo : boxesAvailable){
+               if (boxo.equals("3")){
+                   boxesAvailable.remove(boxo);
+                   box.setHealth(4);
+                   box.setMonsters(mList);
+                   box.setHasKey(true);
+                   this.health+=box.getHealth() *10;
+                   box.printBoxInfo();
+                   this.hasKey = true;
+                   return(mList);
+                }
+            }
+            print("\nYou already checked this box! Nothing spawned in while you were looking away");
+            return null;
        } else if(answer.equals("4")){
            Monsters[] mList = {m7};
-           Box b4 = new Box(1,mList,false);
-           b4.printBoxInfo();
-           boxTracker++;
-           return(mList);
-           
+           //Box b4 = new Box(1,mList,false);
+           for (String boxo : boxesAvailable){
+               if (boxo.equals("4")){
+                   boxesAvailable.remove(boxo);
+                   box.setHealth(1);
+                   box.setMonsters(mList);
+                   box.setHasKey(false);
+                   this.health+=box.getHealth() *10;
+                   box.printBoxInfo();
+                   return(mList);
+                }
+            }
+            print("\nYou already checked this box! Nothing spawned in while you were looking away");
+            return null;
        } else if(answer.equals("door")){
-           print("The door is locked");
+           if (hasKey == true){
+               print("The door opens!");
+           } else {
+               print("The door is locked");
+           }
            Monsters[] mList = {null};
            return(mList);
        } else {
@@ -134,16 +180,117 @@ public class Player
    }
    public int getBoxTracker(){
        return this.boxTracker;
-    }
-   
-   public  Monsters[] getMonsters(String answer){
-       return corner(answer);
    }
+   
+   public boolean getHasKey(){
+       return this.hasKey;
+   }
+   public String boxesAvailable(){
+       String string = "";
+       for (String boxo : boxesAvailable){
+           string += boxo;
+           string += " ";
+       }
+       return string;
+   }
+   
    
       public static void print(String s){
        System.out.println(s);
    }
    
+   
+   
+   
+   
+   //============================================ ROOM 2 ======================================
+   
+   
+   
+   
+   
+   
+   
+   
+   public void newRoom(){
+        Monsters[] mList = {m1,m2,m3,m4,m5,m6,m7};
+        this.hasKey = false;
+        
+        for(Monsters mon: mList){
+            mon.setHealth((int) Math.random()*10+10);
+        }
+       
+       for(int i = boxesAvailable.size()-1;i>0; i--){
+           boxesAvailable.remove(i);
+       }
+       boxesAvailable.add("1");
+       boxesAvailable.add("2");
+       boxesAvailable.add("3");
+   }
+   
+         public Monsters[] corner2(String answer){
+       
+       if (answer.equals("1")){
+           Monsters[] mList = {m1};
+           //Box b1 = new Box(2,mList,false);
+           for (String boxo : boxesAvailable){
+               if (boxo.equals("1")){
+                   boxesAvailable.remove(boxo);
+                   box.setHealth(2);
+                   box.setMonsters(mList);
+                   box.setHasKey(false);
+                   this.health+=box.getHealth() *10;
+                   box.printBoxInfo();
+                   return(mList);
+                }
+            }
+           print("\nYou already checked this box! Nothing spawned in while you were looking away");
+           return(null);
+       } else if (answer.equals("2")){
+           Monsters[] mList = {m2,m3};
+           //Box b2 = new Box(3,mList,false);
+           for (String boxo: boxesAvailable){
+               if (boxo.equals("2")){
+                   boxesAvailable.remove(boxo);
+                   box.setMonsters(mList);
+                   box.setHasKey(false);
+                   this.health+=box.getHealth() *10;
+                   box.printBoxInfo();
+                   return(mList);
+                }
+            }
+            print("\nYou already checked this box! Nothing spawned in while you were looking away");
+            return(null);
+       } else if (answer.equals("3")){
+           Monsters[] mList = {m4, m5, m6};
+           //Box b3 = new Box(4,mList,true);
+           for (String boxo : boxesAvailable){
+               if (boxo.equals("3")){
+                   boxesAvailable.remove(boxo);
+                   box.setHealth(4);
+                   box.setMonsters(mList);
+                   box.setHasKey(true);
+                   this.health+=box.getHealth() *10;
+                   box.printBoxInfo();
+                   this.hasKey = true;
+                   return(mList);
+                }
+            }
+            print("\nYou already checked this box! Nothing spawned in while you were looking away");
+            return null;
+       } else if(answer.equals("door")){
+           if (hasKey == true){
+               print("The door opens!");
+           } else {
+               print("The door is locked");
+           }
+           Monsters[] mList = {null};
+           return(mList);
+       } else {
+           print("You didn't answer the question :/");
+           return(blankList);
+        }
+   }
    
 }
 

@@ -23,10 +23,46 @@ public class Box
        //this.monsterCount = monsters;
        this.hasKey = hasKey;
     }
+   
+   //getters and setters
+   public int getHealth(){
+       return healthAdd;
+   }
+   
+   public void setHealth(int healthAdd){
+       this.healthAdd = healthAdd; 
+   }
+   
+   public int getMonstersCount(){
+       return monsterCount;
+   }
+   
+   public void setMonsterCount(int monsterCount){
+       this.monsterCount = monsterCount; 
+   }
+   
+   public boolean getHasKey(){
+       return hasKey;
+   }
+   
+   public void setHasKey(boolean hasKey){
+       this.hasKey = hasKey; 
+   }
+   
+      public Monsters[] getMonsters(){
+       return monsters;
+   }
+   
+   public void setMonsters(Monsters[] monsters){
+       this.monsters = monsters; 
+   }
+    
+    
     
    public Monsters[] printBoxInfo(){
-       print("This box has " + this.healthAdd + " health potions in it");
-       print("There is also " + monsters.length + " monsters in it! Oh no!");
+       print("❤❤ This box has " + this.healthAdd + " health potions in it");
+       print("❤❤ You drank the potions... your health increased by " + this.healthAdd + "!");
+       print("☠☠ There is also " + monsters.length + " monsters in it! Oh no!");
        if(this.hasKey == true){
            System.out.print(" It also has a key...");
         }
