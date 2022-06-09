@@ -1,12 +1,4 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
+This project was created by me (Katherine Meezan) and Cara Razma as a final project for our first Semester of AP Computer Science A.
+We had a few weeks to work on it in class, and were tasked with making a game that would display our Java knowledge up to that point.
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+It runs as a text-based tower escape game, where the player has to navigate a tower full of monsters in order to find the keys to escape.
